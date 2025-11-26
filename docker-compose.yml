@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+    db:
+      image: postgres:16
+      container_name: belajar-docker-db
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: db_docker
+      ports:
+        - "5432:5432"
+      volumes:
+        - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+    web: 
+      build: .
+      container_name: python-belajar-docker-db
+      depends_on:
+        - db
+      ports:
+        - "5000:5000"
+      environment:
+        DB_HOST: db
+        DB_PORT: 5432
+        DB_NAME: db_docker
+        DB_USER: postgres
+        DB_PASSWORD: postgres
+
