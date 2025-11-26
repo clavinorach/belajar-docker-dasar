@@ -1326,5 +1326,3 @@ Selamat belajar dan semoga project ini bermanfaat sebagai fondasi untuk pengemba
 **Versi:** 1.0.0
 
 **Terakhir Diperbarui:** 26 November 2025
-#   b e l a j a r - d o c k e r - d a s a r  
- 
